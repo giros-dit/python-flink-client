@@ -642,13 +642,10 @@ class DefaultApi(object):
             },
             params_map={
                 'all': [
-                    'body',
+                    'jarfile',
                 ],
-                'required': [
-                    'body',
-                ],
+                'required': [],
                 'nullable': [
-                    'body',
                 ],
                 'enum': [
                 ],
@@ -661,15 +658,17 @@ class DefaultApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        (bool, date, datetime, dict, float, int, list, str, none_type,),
+                    'jarfile':
+                        ([file_type],),
                 },
                 'attribute_map': {
+                    'jarfile': 'jarfile',
                 },
                 'location_map': {
-                    'body': 'body',
+                    'jarfile': 'form',
                 },
                 'collection_format_map': {
+                    'jarfile': 'csv',
                 }
             },
             headers_map={
@@ -677,7 +676,7 @@ class DefaultApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/x-java-archive'
+                    'multipart/form-data'
                 ]
             },
             api_client=api_client
@@ -4476,7 +4475,6 @@ class DefaultApi(object):
 
     def jars_upload_post(
         self,
-        body,
         **kwargs
     ):
         """jars_upload_post  # noqa: E501
@@ -4485,13 +4483,12 @@ class DefaultApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.jars_upload_post(body, async_req=True)
+        >>> thread = api.jars_upload_post(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (bool, date, datetime, dict, float, int, list, str, none_type):
 
         Keyword Args:
+            jarfile ([file_type]): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4553,8 +4550,6 @@ class DefaultApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['body'] = \
-            body
         return self.jars_upload_post_endpoint.call_with_http_info(**kwargs)
 
     def jobmanager_config_get(

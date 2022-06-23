@@ -783,7 +783,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jars_upload_post**
-> JarUploadResponseBody jars_upload_post(body)
+> JarUploadResponseBody jars_upload_post()
 
 
 
@@ -809,11 +809,14 @@ configuration = flink_client.Configuration(
 with flink_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    body = None # bool, date, datetime, dict, float, int, list, str, none_type | 
+    jarfile = [
+        open('/path/to/file', 'rb'),
+    ] # [file_type] |  (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
-        api_response = api_instance.jars_upload_post(body)
+        api_response = api_instance.jars_upload_post(jarfile=jarfile)
         pprint(api_response)
     except flink_client.ApiException as e:
         print("Exception when calling DefaultApi->jars_upload_post: %s\n" % e)
@@ -824,7 +827,7 @@ with flink_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **bool, date, datetime, dict, float, int, list, str, none_type**|  |
+ **jarfile** | **[file_type]**|  | [optional]
 
 ### Return type
 
@@ -836,7 +839,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-java-archive
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

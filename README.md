@@ -218,6 +218,7 @@ Class | Method | HTTP request | Description
  - [JarRunRequestBody](docs/JarRunRequestBody.md)
  - [JarRunResponseBody](docs/JarRunResponseBody.md)
  - [JarUploadResponseBody](docs/JarUploadResponseBody.md)
+ - [JarsUploadPostRequest](docs/JarsUploadPostRequest.md)
  - [JobAccumulatorsInfo](docs/JobAccumulatorsInfo.md)
  - [JobConfigInfo](docs/JobConfigInfo.md)
  - [JobDetails](docs/JobDetails.md)

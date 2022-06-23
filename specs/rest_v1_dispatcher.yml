@@ -90,9 +90,14 @@ paths:
         \ http://hostname:port/jars/upload'."
       requestBody:
         content:
-          application/x-java-archive: {
-            schema: {}
-          }
+          multipart/form-data:
+            schema:
+              properties:
+                jarfile:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
         required: true
       responses:
         "200":

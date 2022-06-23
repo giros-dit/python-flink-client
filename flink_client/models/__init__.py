@@ -47,6 +47,7 @@ from flink_client.model.jar_plan_request_body import JarPlanRequestBody
 from flink_client.model.jar_run_request_body import JarRunRequestBody
 from flink_client.model.jar_run_response_body import JarRunResponseBody
 from flink_client.model.jar_upload_response_body import JarUploadResponseBody
+from flink_client.model.jars_upload_post_request import JarsUploadPostRequest
 from flink_client.model.job_accumulators_info import JobAccumulatorsInfo
 from flink_client.model.job_config_info import JobConfigInfo
 from flink_client.model.job_details import JobDetails
